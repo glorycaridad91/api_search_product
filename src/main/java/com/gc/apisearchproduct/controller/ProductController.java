@@ -38,7 +38,7 @@ public class ProductController {
             @ApiResponse(responseCode = "404", description = "Product not found", content = @Content) })
     @GetMapping("/product/{productId}")
     public ResponseEntity<ProductResponse> getProductById(
-            @Parameter(description = "id of product to be searched")
+            @Parameter(description = "ID of product to be searched")
             @PathVariable(value = "productId") Long productId) {
         LOGGER.info("Getting product by the ID: " + productId);
         return new ResponseEntity<>(productService.getProduct(productId), HttpStatus.OK);
