@@ -22,9 +22,9 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public ProductResponse getProduct(Long productId) {
-        LOGGER.info("obtaining product by ID");
+        LOGGER.info("obtaining product by ID: " + productId);
         Product product =  productRepository.getProductById(productId);
-        LOGGER.info("obtaining product in stock by ID");
+        LOGGER.info("obtaining product in stock by ID: " + productId);
         Integer stock = stockService.getStock(productId);
         return ProductResponse.builder()
                 .id(product.getId())

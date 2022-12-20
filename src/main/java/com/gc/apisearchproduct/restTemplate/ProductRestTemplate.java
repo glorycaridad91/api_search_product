@@ -22,7 +22,7 @@ public class ProductRestTemplate {
 
     public Product getProductById(Long productId) {
         ProductRequest.builder().build().setIdProduct(productId);
-        LOGGER.info("GetForObject restTemplate by product ID");
+        LOGGER.info("GetForObject restTemplate by product ID: " + productId);
         return restTemplate.getForObject("/product/{productId}",
                 Product.class, productId);
     }
